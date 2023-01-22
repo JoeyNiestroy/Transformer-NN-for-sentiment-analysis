@@ -96,12 +96,12 @@ model.compile(
 log_dir = "logs/"
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=3, update_freq='epoch')
 
-# model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-#     filepath =  "saved-model-{epoch:02d}.hdf5",
-#     save_weights_only=False,
-#     monitor='val_accuracy',
-#     mode='max',
-#     save_best_only=False)
+model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
+    filepath =  "saved-model-{epoch:02d}.hdf5",
+    save_weights_only=False,
+    monitor='val_accuracy',
+    mode='max',
+    save_best_only=False)
 
 model.fit(x=x_train, 
           y=y_train, 
